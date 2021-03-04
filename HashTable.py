@@ -34,11 +34,7 @@ class HashTable:
     bit = (key, value)
     newBit = self.arr[hashKey].find(key)
 
-    if newBit != -1:
-      new_item = self.arr[hashKey].append(newBit)
-      self.arr[hashKey].replace(new_item)
-
-    else:
+    if newBit == -1:
         self.arr[hashKey].append(bit)
 
   # Traverse through the every Linked List in the table and print the key value pairs.

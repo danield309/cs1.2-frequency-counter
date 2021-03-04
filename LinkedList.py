@@ -17,18 +17,17 @@ class LinkedList:
     current = self.head
 
     found = False
-    counter = 0
 
     while current != None and not found:
 
-      if current.data == item:
+     if current.data[0] == item:
+        add = current.data[1] + 1
+        current = (current.data[0], add)
         found = True
-      else:
+     else:
         current = current.next
-        counter += 1
-
     if found:
-      return counter
+      return current
     else:
       return -1
 
@@ -42,9 +41,6 @@ class LinkedList:
         current = current.next
         counter +=1
       return counter
-
-  def update(self):
-      pass
 
   def print_nodes(self):
     current = self.head
