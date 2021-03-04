@@ -32,8 +32,6 @@ class LinkedList:
     else:
       return -1
 
-
-
   def length(self):
     if self.head == None:
       return 0
@@ -45,13 +43,15 @@ class LinkedList:
         counter +=1
       return counter
 
+  def update(self):
+      pass
 
   def print_nodes(self):
     current = self.head
-    
+
     if current == None:
       print('The linked list is empty.')
     else:
       for i in range(self.length()):
-        print(f'Node {i}: {current.data}')
+        print(f'{current.data[0]}: {current.data[1]}')
         current = current.next

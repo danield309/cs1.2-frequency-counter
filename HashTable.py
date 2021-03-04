@@ -9,7 +9,7 @@ class HashTable:
   # Each element of the hash table (arr) is a linked list.
   # This method creates an array (list) of a given size and populates each of its elements with a LinkedList object.
 
-  def create_arr(self, size): # creates array of a given size and fills elements with a ll object
+  def create_arr(self, size): # creates array and fills elements with a ll object
     arr = []
 
     for i in range(size):
@@ -20,8 +20,10 @@ class HashTable:
 
   # Hash functions are a function that turns each of these keys into an index value that we can use to decide where in our list each key:value pair should be stored.
 
-  def hash_func(self, key): # creates keys into index values were we it can decide were to store key value pairs
-    index = hash(key) % self.size
+  def hash_func(self, key): # creates keys into index values were it can decide were to store key value pairs
+    word = key.lower()
+    hashNum = ord(word[0])
+    index = hashNum % self.size
 
     return index
 
@@ -36,7 +38,8 @@ class HashTable:
       new_item = self.arr[hashKey].append(newBit)
       self.arr[hashKey].replace(new_item)
 
-    else: self.arr[hashKey].append(bit)
+    else:
+        self.arr[hashKey].append(bit)
 
   # Traverse through the every Linked List in the table and print the key value pairs.
 
